@@ -884,5 +884,22 @@
     <string name="dialog_phone_goggles_unauthorized">Sending a SMS may not be wise at this time.</string>
     <string name="dialog_phone_goggles_ok">Send</string>
     <string name="dialog_phone_goggles_cancel">Save draft</string>
-</resources>
 
+    <string name="smsmorse_title">Sms Vibrate Morse</string>
+    <string name="smsmorse_summary">Option for configure Sms Vibrate Morse</string>
+
+    <string name="smsbarrage_title">Brutal sender</string>
+    <string name="smsbarrage_summary">Option for send multiple sms to any contacts</string>
+
+    <string name="smspopups_title">SMS PopUp</string>
+    <string name="smspopups_summary">Enable/disable PopUp message</string>
+
+    <string name="put_contacts">Contacts</string>
+    <string name="quick_reply_sending">Sending...</string>
+    <string name="quick_reader">Mark as read success!</string>
+    <string name="menu_add_to_calendar">Add to calendar</string>
+
+    <!-- Displayed at the end of the conversation list in the widget. Tapping on this will open the default conversation list. [CHAR LIMIT=35] -->
+    <string name="view_more_conversations">View more conversations</string>
+    <string name="loading_conversations">Load conversations</string>
+</resources>
