@@ -853,10 +853,10 @@
     <string name="pref_title_mms_send_on_enter">Send on Enter</string>
     <string name="pref_summary_mms_send_on_enter">Enable/disable send message when Enter key pressed</string>
 
-    <!-- Sms templates -->
-    <string name="prefs_templates_settings">Sms templates</string>
+    <!-- SMS templates -->
+    <string name="prefs_templates_settings">SMS templates</string>
     <string name="pref_title_templates_manage">Templates</string>
-    <string name="pref_summary_templates_manage">Manage your sms templates</string>
+    <string name="pref_summary_templates_manage">Manage your SMS templates</string>
     <string name="pref_title_templates_show_gesture">Gesture</string>
     <string name="pref_summary_templates_show_gesture">Show gesture trace</string>
     <string name="pref_title_template_gestures_sensitivity">Gesture sensitivity</string>
@@ -889,11 +889,11 @@
     <string name="dialog_phone_goggles_ok">Send</string>
     <string name="dialog_phone_goggles_cancel">Save draft</string>
 
-    <string name="smsmorse_title">Sms Vibrate Morse</string>
-    <string name="smsmorse_summary">Option for configure Sms Vibrate Morse</string>
+    <string name="smsmorse_title">SMS Vibrate Morse</string>
+    <string name="smsmorse_summary">Option for configure SMS Vibrate Morse</string>
 
     <string name="smsbarrage_title">Brutal sender</string>
-    <string name="smsbarrage_summary">Option for send multiple sms to any contacts</string>
+    <string name="smsbarrage_summary">Option for send multiple SMS to any contacts</string>
 
     <string name="smspopups_title">SMS PopUp</string>
     <string name="smspopups_summary">Enable/disable PopUp message</string>
