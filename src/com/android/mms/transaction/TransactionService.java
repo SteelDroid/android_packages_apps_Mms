@@ -378,6 +378,8 @@ public class TransactionService extends Service implements Observer {
             Log.v(TAG, "update transaction " + serviceId);
         }
 
+        boolean needToEndMmsConnectivity = false;
+
         try {
             synchronized (mProcessing) {
                 mProcessing.remove(transaction);
@@ -394,7 +396,7 @@ public class TransactionService extends Service implements Observer {
                     if (Log.isLoggable(LogTag.TRANSACTION, Log.VERBOSE)) {
                         Log.v(TAG, "update: endMmsConnectivity");
                     }
-                    endMmsConnectivity();
+                    needToEndMmsConnectivity = true;
                 }
             }
 
@@ -445,8 +447,15 @@ public class TransactionService extends Service implements Observer {
             if (Log.isLoggable(LogTag.TRANSACTION, Log.VERBOSE)) {
                 Log.v(TAG, "update: broadcast transaction result " + result);
             }
+
             // Broadcast the result of the transaction.
             sendBroadcast(intent);
+
+            // End Mms Connectivity only after all events are propagated or phone
+            // will deep sleep not reporting incoming Mms to the user
+            if (needToEndMmsConnectivity)
+                endMmsConnectivity();
+
         } finally {
             transaction.detach(this);
             MmsSystemEventReceiver.unRegisterForConnectionStateChanges(getApplicationContext());
