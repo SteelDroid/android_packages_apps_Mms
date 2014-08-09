@@ -1466,7 +1466,7 @@ public class ComposeMessageActivity extends Activity
             if (ContentType.isDrmType(type)) {
                 // All parts (but there's probably only a single one) have to be successful
                 // for a valid result.
-                result &= copyPartToDrmProvider(part);
+                result &= copyPart(part, getString(R.string.save_ringtone_filename_fallback));
             }
         }
         return result;
@@ -1622,7 +1622,8 @@ public class ComposeMessageActivity extends Activity
 
             if (ContentType.isImageType(type) || ContentType.isVideoType(type) ||
                     ContentType.isAudioType(type)) {
-                result &= copyPart(part, Long.toHexString(msgId));   // all parts have to be successful for a valid result.
+                // all parts have to be successful for a valid result.
+                result &= copyPart(part, getString(R.string.copy_to_sdcard_filename_fallback));
             }
         }
         return result;
@@ -1678,7 +1679,17 @@ public class ComposeMessageActivity extends Activity
                     return false;
                 }
 
-                fout = new FileOutputStream(file);
+                try {
+                    fout = new FileOutputStream(file);
+                } catch (IOException e) {
+                    Log.e(TAG, "IOException caught while opening output stream", e);
+                    if (fallback.equals(fileName)) {
+                        return false;
+                    }
+                    fileName = fallback;
+                    file = getUniqueDestination(dir + fileName, extension);
+                    fout = new FileOutputStream(file);
+                }
 
                 byte[] buffer = new byte[8000];
                 int size = 0;
