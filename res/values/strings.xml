@@ -128,7 +128,6 @@
     <!-- Header of slideshow showing which slide is being displayed -->
     <string name="slide_show_part">Part <xliff:g id="part">%1$s</xliff:g>/<xliff:g id="total">%2$s</xliff:g></string>
 
-
     <!-- Menu item in slide edit screen for removing the text from the slide being edited -->
     <string name="remove_text">Remove text</string>
     <!-- Menu item in slide edit screen for adding a picture to the slide being edited -->
@@ -543,7 +542,6 @@
     <!-- Label in "Report" window -->
     <string name="status_label">Status:\u0020</string>
 
-
     <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
     <string name="attach_image">Pictures</string>
     <!-- Attachment Type Selector Adapter. This string is an option in the "Attach" dialog, "Add music" dialog -->
@@ -729,10 +727,10 @@
     <!-- Search setting description -->
     <string name="search_setting_description">Text in your messages</string>
 
-    <!--  Search empty results -->
+    <!-- Search empty results -->
     <string name="search_empty">No matches</string>
 
-    <!--  Search results title -->
+    <!-- Search results title -->
     <plurals name="search_results_title">
         <!-- Case of 1 result. -->
         <item quantity="one"><xliff:g id="number" example="1">%1$s</xliff:g> result for \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
@@ -869,11 +867,11 @@
     <string name="template_insert">Insert template</string>
     <string name="template_insert_ctx_menu_title">Edit text</string>
     <string name="template_gesture_draw">Draw the gesture in the space below</string>
-    <string name="template_not_present_error">You have not defined any template</string>
+    <string name="template_not_present_error">There are no defined templates</string>
     <string name="template_not_present_error_title">Error</string>
     <string name="template_select">Select a template</string>
     <string name="template_cancel_confirm_title">Warning</string>
-    <string name="template_cancel_confirm_text">Would you like to cancel?</string>
+    <string name="template_cancel_confirm_text">The template will be deleted. Continue?</string>
     <string name="gestures_already_present">Warning: A similar gesture is associated to another template!</string>
 
     <!-- Phone goggles -->
