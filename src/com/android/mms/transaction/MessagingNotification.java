@@ -642,8 +642,12 @@ public class MessagingNotification {
                 (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
             boolean nowSilent =
                 audioManager.getRingerMode() == AudioManager.RINGER_MODE_VIBRATE;
+            boolean shouldVibrate =
+                audioManager.shouldVibrate(AudioManager.VIBRATE_TYPE_RINGER);
 
-            if ((vibrateAlways || vibrateSilent && nowSilent) && (vibrateOnCall || (!vibrateOnCall && callStateIdle))) {
+            if (((vibrateAlways && shouldVibrate) || (vibrateSilent && nowSilent)) &&
+                (vibrateOnCall || (!vibrateOnCall && callStateIdle))) {
+
                 /* WAS: notification.defaults |= Notification.DEFAULT_VIBRATE;*/
                 String mVibratePattern = sp.getString(MessagingPreferenceActivity.NOTIFICATION_VIBRATE_PATTERN, "").equals("custom")
                     ? sp.getString(MessagingPreferenceActivity.NOTIFICATION_VIBRATE_PATTERN_CUSTOM, "0,1200")
